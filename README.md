@@ -2,69 +2,65 @@
 
 ## Machine Learning Prediction System
 
-This project develops a machine learning system for predicting the target variable in the Mercedes-Benz Greener Manufacturing dataset.
+A machine learning project developed to predict the target variable in the Mercedes-Benz Greener Manufacturing dataset.
 
-The project covers the complete machine learning workflow:
-
-- Data Preparation & Exploratory Data Analysis
-- Data Preprocessing
-- Feature Selection and Dimensionality Reduction
-- Model Training and Tuning
-- Model Comparison
-- Streamlit Deployment
+The project explores the complete machine learning workflow, from data preparation and preprocessing to feature selection, dimensionality reduction, model training, evaluation, tuning, and deployment.
 
 ---
 
-## 1. Project Objective
+## 🚗 Project Overview
 
-The objective of this project is to build a machine learning model capable of predicting the target variable from manufacturing-related data while investigating effective approaches for handling a high-dimensional feature space.
+The Mercedes-Benz Greener Manufacturing dataset contains a large number of manufacturing-related features. A major challenge is the high-dimensional feature space, which makes feature selection and dimensionality reduction important.
 
-Because the dataset contains a large number of features, dimensionality reduction and feature selection were important parts of the project.
+Our project investigates different approaches to reduce the feature space and compares several machine learning models to identify a strong predictive solution.
 
----
-
-## 2. Data Preparation & EDA
-
-The first phase focused on understanding and preparing the dataset.
-
-The main steps included:
-
-- Inspecting the dataset structure
-- Examining numerical and categorical features
-- Checking for missing values
-- Exploring feature distributions
-- Investigating constant features
-- Splitting the dataset into training and validation sets
-
-The data was divided into:
-
-- Training set: 3,367 samples
-- Validation set: 842 samples
+The final model is deployed as an interactive **Streamlit web application**.
 
 ---
 
-## 3. Data Preprocessing
+## 📊 Project Pipeline
 
-### Constant Feature Removal
+The project consists of four main phases:
 
-Constant features were removed because they contain no variation and therefore provide no useful information for prediction.
+### 1. Data Preparation & EDA
 
-After this step, the training and validation datasets contained:
+- Loaded and inspected the dataset
+- Examined the dataset structure and feature types
+- Identified numerical and categorical features
+- Checked for missing values
+- Investigated constant features
+- Split the data into training and validation sets
 
-- 364 features
+The dataset was divided into:
 
-### One-Hot Encoding
+- **Training:** 3,367 samples
+- **Validation:** 842 samples
 
-Categorical features were transformed using `OneHotEncoder`.
+---
+
+### 2. Data Preprocessing
+
+#### Constant Feature Removal
+
+Constant features were removed because they contain no variation and therefore cannot provide useful predictive information.
+
+After removing constant features:
+
+- **364 features remained**
+
+#### One-Hot Encoding
+
+Categorical variables were transformed using `OneHotEncoder`.
 
 ```python
 OneHotEncoder(
     handle_unknown="ignore",
     sparse_output=False
 )
+```
 
-
-This increased the feature space to:
+    handle_unknown="ignore",
+ This increased the feature space to:
 
 549 processed features
 Feature Scaling
@@ -212,4 +208,5 @@ Multiple regression models
 Hyperparameter tuning
 Model evaluation
 Streamlit deployment
-Public GitHub repository
+Public GitHub repository   sparse_output=False
+)
