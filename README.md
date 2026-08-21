@@ -2,65 +2,62 @@
 
 ## Machine Learning Prediction System
 
-A machine learning project developed to predict the target variable in the Mercedes-Benz Greener Manufacturing dataset.
+This project develops a machine learning system for predicting the target variable in the Mercedes-Benz Greener Manufacturing dataset.
 
-The project explores the complete machine learning workflow, from data preparation and preprocessing to feature selection, dimensionality reduction, model training, evaluation, tuning, and deployment.
+The project covers the complete machine learning workflow:
 
----
-
-## 🚗 Project Overview
-
-The Mercedes-Benz Greener Manufacturing dataset contains a large number of manufacturing-related features. A major challenge is the high-dimensional feature space, which makes feature selection and dimensionality reduction important.
-
-Our project investigates different approaches to reduce the feature space and compares several machine learning models to identify a strong predictive solution.
-
-The final model is deployed as an interactive **Streamlit web application**.
+- Data Preparation & Exploratory Data Analysis
+- Data Preprocessing
+- Feature Selection and Dimensionality Reduction
+- Model Training and Tuning
+- Model Comparison
+- Streamlit Deployment
 
 ---
 
-## 📊 Project Pipeline
+## 1. Project Objective
 
-The project consists of four main phases:
+The objective of this project is to build a machine learning model capable of predicting the target variable from manufacturing-related data while investigating effective approaches for handling a high-dimensional feature space.
 
-### 1. Data Preparation & EDA
-
-- Loaded and inspected the dataset
-- Examined the dataset structure and feature types
-- Identified numerical and categorical features
-- Checked for missing values
-- Investigated constant features
-- Split the data into training and validation sets
-
-The dataset was divided into:
-
-- **Training:** 3,367 samples
-- **Validation:** 842 samples
+Because the dataset contains a large number of features, dimensionality reduction and feature selection were important parts of the project.
 
 ---
 
-### 2. Data Preprocessing
+## 2. Data Preparation & EDA
 
-#### Constant Feature Removal
+The first phase focused on understanding and preparing the dataset.
 
-Constant features were removed because they contain no variation and therefore cannot provide useful predictive information.
+The main steps included:
 
-After removing constant features:
+- Inspecting the dataset structure
+- Examining numerical and categorical features
+- Checking for missing values
+- Exploring feature distributions
+- Investigating constant features
+- Splitting the dataset into training and validation sets
 
-- **364 features remained**
+The data was divided into:
 
-#### One-Hot Encoding
+- Training set: 3,367 samples
+- Validation set: 842 samples
 
-Categorical variables were transformed using `OneHotEncoder`.
+---
 
-```python
-OneHotEncoder(
-    handle_unknown="ignore",
-    sparse_output=False
-)
-```
+## 3. Data Preprocessing
 
-    handle_unknown="ignore",
- This increased the feature space to:
+### Constant Feature Removal
+
+Constant features were removed because they contain no variation and therefore provide no useful information for prediction.
+
+After this step, the training and validation datasets contained:
+
+- 364 features
+
+### One-Hot Encoding
+
+Categorical features were transformed using `OneHotEncoder`.
+
+This increased the feature space to:
 
 549 processed features
 Feature Scaling
@@ -170,43 +167,32 @@ Home — project overview and final model performance
 Prediction — generate predictions using the trained model
 Compare — compare the evaluated models
 Dashboard — visualize project and model information
-8. Repository Structure
-Mercedes-Benz-Greener-Manufacturing/
-│
-├── deployment/
-│   ├── app.py
-│   ├── final_model.pkl
-│   └── requirements.txt
-│
-├── README.md
-├── .gitignore
-└── ...
 
 The complete analysis and modeling process are documented in the project notebook.
 
-9. Technologies
+8. Technologies
 
 The project was developed using:
 
-Python
-Pandas
-NumPy
-Scikit-learn
-XGBoost
-Streamlit
-Joblib
-Jupyter Notebook
-10. Project Deliverables
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- Streamlit
+- Joblib
+- Jupyter Notebook
+
+9. Project Deliverables
 
 The final project includes:
 
-Data preparation and EDA
-Data preprocessing
-Lasso feature selection
-PCA dimensionality-reduction comparison
-Multiple regression models
-Hyperparameter tuning
-Model evaluation
-Streamlit deployment
-Public GitHub repository   sparse_output=False
-)
+- Data preparation and EDA
+- Data preprocessing
+- Lasso feature selection
+- PCA dimensionality-reduction comparison
+- Multiple regression models
+- Hyperparameter tuning
+- Model evaluation
+- Streamlit deployment
+- Public GitHub repository
